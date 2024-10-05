@@ -1,13 +1,695 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Manrope";
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul, li {
+  list-style: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.button {
+  background: #EA1C29;
+  padding: 15px 20px;
+  font-family: "Manrope";
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  border: #EA1C29 3px solid;
+}
+.button:hover {
+  background: #0000006c;
+  border: #EA1C29 3px solid;
+  transition: 0.3s ease-in-out;
+}
+
+
+
+
+.header {
+  position: absolute;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+}
+.header img {
+  width: 120px;
+}
+.header nav {
+  background: #ffffff56;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+.header nav button {
+  background: none;
+  border: none;
+  background: white;
+  border-radius: 5px;
+}
+.header nav button:nth-child(1) {
+  margin-right: 20px;
+}
+.header nav img {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+.header nav .shop::before {
+  content: "0";
+  background: #EA1C29;
+  color: white;
+  position: absolute;
+  font-size: 13px;
+  top: -10px;
+  right: -10px;
+  z-index: 999;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+.header nav .shop {
+  position: relative;
+  cursor: pointer;
+}
+.header nav .account {
+  cursor: pointer;
+}
+.header nav .shop:hover, 
+.header nav .account:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+.header nav a {
+  color: white;
+  text-transform: uppercase;
+  margin: 0 30px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+.header nav a:hover {
+  color: #EA1C29;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+.header .button { 
+  width: 200px;
+}
+@media screen and (max-width: 1470px) {
+  .header img {
+    width: 100px;
+  }
+  .header nav {
+    width: 80%;
+    margin: 0 20px;
+  }
+  .header nav a {
+    margin: 0 10px;
+  }
+  .header .button {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 1075px) {
+  .header {
+    padding: 20px 30px;
+  }
+  .header nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    top: 0px;
+    right: 0;
+    background: #333;
+    width: 200px;
+    padding: 30px;
+    margin: 0;
+  }
+  .header nav.open {
+    display: flex;
+    width: 40%;
+  }
+  .header nav div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .header nav div:nth-child(1) a {
+    margin: 10px;
+  }
+  .header .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  .close-btn {
+    background: none !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 700px) {
+  .header nav.open {
+    width: 100%;
+  } 
+}
+
+
+
+.hero {
+  background: url(./assets/header-bg.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.hero .content {
+  width: 100%;
+  height: 100%;
+  background: #000000b2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 200px;
+  position: relative;
+}
+.hero .content h1 {
+  font-family: "Anton";
+  color: white;
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+.hero .content h2 {
+  color: #EA1C29;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+.hero .content p {
+  color: white;
+}
+.hero .content button {
+  width: 230px;
+  margin-top: 40px;
+}
+.hero aside {
+  position: absolute;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.hero aside img {
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+}
+.hero aside img:hover {
+  background: #EA1C29;
+  transition: 0.3s ease-in-out;
+}
+.hero strong {
+  color: #EA1C29;
+  font-weight: 500;
+}
+@media screen and (max-width: 1400px) {
+  .hero .content {
+    padding-left: 100px;
+  }
+  .hero .content h1 {
+    font-size: 80px;
+  }
+  .hero .content h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .hero aside {
+    right: 50px;
+  }
+}
+@media screen and (max-width: 1075px) {
+  .hero .content {
+    padding-left: 70px;
+  }
+  .hero .content h1 {
+    font-size: 60px;
+  }
+  .hero .content p {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .hero .content {
+    padding-left: 40px;
+  }
+  .hero .content h1 {
+    font-size: 50px;
+  }
+  .hero aside {
+    right: 30px;
+  }
+  .hero .content p {
+    width: 80%;
+    font-size: 15px;
+  }
+}
+
+
+
+
+.avantages {
+  position: absolute;
+  bottom: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.avantages div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  width: 23%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px 5px #00000059;
+}
+.avantages div img {
+  width: 80px;
+  margin-bottom: 30px;
+}
+.avantages div p {
+  font-size: 18px;
+  font-family: "Anton";
+}
+.avantages div:nth-child(2) {
+  background: #EA1C29;
+  color: white;
+}
+.avantages div:nth-child(4) {
+  background: #EA1C29;
+  color: white;
+}
+.avantages div:nth-child(3) img, 
+.avantages div:nth-child(4) img {
+  width: 70px;
+}
+@media screen and (max-width: 1440px) {
+  .avantages div p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .avantages div img {
+    width: 60px;
+  }
+  .avantages div:nth-child(3) img, 
+  .avantages div:nth-child(4) img {
+    width: 55px;
+  }
+  .avantages {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 968px) {
+  .avantages {
+    width: 80%;
+    flex-wrap: wrap;
+  }
+  .avantages div {
+    width: 47%;
+    margin-bottom: 30px;
+  }
+  .avantages {
+    bottom: -330px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .avantages div {
+    width: 47%;
+    margin-bottom: 30px;
+  }
+  .avantages {
+    bottom: -380px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .avantages div {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .avantages {
+    bottom: -700px;
+  }
+}
+
+
+
+
+.coach {
+  margin-top: 290px;
+  display: flex;
+  padding: 100px;
+  padding-top: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+.coach .img {
+  width: 45%;
+}
+.coach .img img {
+  width: 100%;
+  object-fit: cover;
+}
+.coach .txt {
+  width: 45%;
+}
+.coach h3 {
+  color: #EA1C29;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.coach h2 {
+  font-family: "Anton";
+  font-size: 50px;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.coach p {
+  line-height: 33px;
+  font-weight: 300;
+}
+.coach figcaption {
+  margin: 30px;
+  margin-top: 50px;
+  background: #e9e9e9;
+  padding: 20px 40px;
+  font-family: "Anton";
+  font-style: italic;
+  font-size: 20px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+
+
+
+.services {
+  background: url(./assets/services.jpg);
+  height: 100vh;
+  background-size: cover;
+}
+.services .container {
+  width: 100%;
+  height: 100%;
+  background: #000000e1;
+  padding: 100px;
+}
+.services .container h3 {
+  color: #EA1C29;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.services .container h2 {
+  font-family: "Anton";
+  font-size: 45px;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.services .content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.services .content div {
+  width: 23%;
+  padding: 40px 20px;
+  background: #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.services .content div h3 {
+  color: white;
+  font-family: "Anton";
+  font-weight: 400;
+  text-transform: initial;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.services .content div p {
+  color: white;
+  text-align: center;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 30px;
+  margin: 0 20px;
+}
+.services .content img {
+  width: 70px;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+.shop-section {
+  padding: 100px;
+}
+.shop-section .titles h2 {
+  font-family: "Anton";
+  font-weight: 400;
+  font-size: 45px;
+  margin-bottom: 100px;
+}
+.shop-section .titles h3 {
+  color: #EA1C29;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.shop-section .content,
+.shop-page-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.shop-section article,
+.shop-page-content article {
+  width: 23%;
+  height: 400px;
+  box-shadow: 5px 5px 15px 5px #e2e2e2;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.shop-section article img,
+.shop-page-content article img  {
+  width: 70%;
+  height: 300px;
+  object-fit: contain;
+}
+.shop-section article div,
+.shop-page-content article div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+.shop-section article div p:nth-child(1),
+.shop-page-content article div p:nth-child(1) {
+  font-weight: bold;
+}
+.shop-section article div p:nth-child(2),
+.shop-page-content article div p:nth-child(2) {
+  font-weight: bold;
+  color: #EA1C29;
+  font-size: 18px;
+}
+.shop-section button ,
+.shop-page-content button{
+  width: 100%;
+  background-color: #EA1C29;
+  color: white;
+  border: none;
+  font-family: "Manrope";
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px 0;
+  border: 5px solid #EA1C29;
+  cursor: pointer;
+  font-weight: 500;
+}
+.shop-section button:hover ,
+.shop-page-content button:hover {
+  background-color: #000000e0;
+  transition: 0.3s ease-in-out;
+}
+
+
+
+
+
+.pricing {
+  background: url(./assets/pricing.jpg);
+  background-size: cover;
+}
+.pricing .container {
+  width: 100%;
+  height: 100%;
+  background: #000000e1;
+  padding: 100px;
+}
+.pricing .titles h2 {
+  font-family: "Anton";
+  font-weight: 400;
+  font-size: 45px;
+  margin-bottom: 100px;
+  color: white;
+  text-align: center;
+}
+.pricing .titles h3 {
+  color: #EA1C29;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  text-align: center;
+}
+.pricing .content {
+  display: flex;
+  justify-content: center;
+}
+.pricing .content article {
+  background: white;
+  margin: 40px;
+}
+.pricing .content article img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.pricing .content .info {
+  padding: 30px;
+  position: relative;
+  padding-top: 100px;
+}
+.pricing .content h4 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 25px;
+} 
+.pricing .content .price-abs {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 24px 19px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #EA1C29;
+}
+.pricing .content .abs2 {
+  padding: 24px 14px !important;
+}
+.pricing .content .price-abs .prix {
+  font-size: 30px;
+  font-weight: bold;
+}
+.pricing .content .price-abs .mensuel {
+  color: grey;
+  font-size: 14px;
+}
+.pricing .content article ul li img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.pricing .content article ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.pricing .button {
+  width: 100%;
+  margin-top: 20px;
+  border: 5px solid #EA1C29;
+}
+.pricing .button:hover {
+  background: black;
+}
+
+
+
+
+
+.shop-header {
+  background: url(./assets/shop-bg.jpg);
+  background-size: cover;
+  background-position: bottom;
+  height: 70vh;
+}
+.shop-header div {
+  background: #000000a1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop-header h1 {
+  color: white;
+  font-family: "Anton";
+  font-weight: 400;
+  font-size: 90px;
+  margin-top: 50px;
+}
+.shop-page-content {
+  padding: 100px;
+}
+.shop-page-content article {
+  margin-bottom: 50px;
 }
