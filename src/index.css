@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+body, input, textarea {
   font-family: "Manrope";
 }
 a {
@@ -120,10 +120,16 @@ ul, li {
     margin: 0 20px;
   }
   .header nav a {
-    margin: 0 10px;
+    margin: 0 20px;
   }
   .header .button {
     width: 150px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .header nav a {
+    margin: 0 10px;
   }
 }
 @media screen and (max-width: 1075px) {
@@ -238,6 +244,7 @@ ul, li {
 @media screen and (max-width: 1400px) {
   .hero .content {
     padding-left: 100px;
+    padding-top: 50px;
   }
   .hero .content h1 {
     font-size: 80px;
@@ -265,32 +272,50 @@ ul, li {
 @media screen and (max-width: 800px) {
   .hero .content {
     padding-left: 40px;
+    padding-top: 150px;
   }
   .hero .content h1 {
     font-size: 50px;
+    margin-bottom: 40px;
+  }
+  .hero .content h2 {
+    margin-bottom: 10px;
   }
   .hero aside {
-    right: 30px;
+    position: initial;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 50px;
   }
   .hero .content p {
-    width: 80%;
+    width: 95%;
     font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .hero .button {
+    width: 85% !important;
   }
 }
 
 
 
 
+
 .avantages {
+  position: relative;
+}
+.avantages .content {
   position: absolute;
-  bottom: -180px;
+  top: -50px;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
   display: flex;
   justify-content: space-between;
 }
-.avantages div {
+.avantages .div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -302,72 +327,73 @@ ul, li {
   border-radius: 20px;
   box-shadow: 1px 1px 20px 5px #00000059;
 }
-.avantages div img {
+.avantages .div img {
   width: 80px;
   margin-bottom: 30px;
 }
-.avantages div p {
+.avantages .div p {
   font-size: 18px;
   font-family: "Anton";
 }
-.avantages div:nth-child(2) {
+.avantages .div:nth-child(2) {
   background: #EA1C29;
   color: white;
 }
-.avantages div:nth-child(4) {
+.avantages .div:nth-child(4) {
   background: #EA1C29;
   color: white;
 }
-.avantages div:nth-child(3) img, 
-.avantages div:nth-child(4) img {
+.avantages .div:nth-child(3) img, 
+.avantages .div:nth-child(4) img {
   width: 70px;
 }
 @media screen and (max-width: 1440px) {
-  .avantages div p {
+  .avantages .div p {
     font-size: 15px;
   }
 }
 @media screen and (max-width: 1260px) {
-  .avantages div img {
+  .avantages .div img {
     width: 60px;
   }
-  .avantages div:nth-child(3) img, 
-  .avantages div:nth-child(4) img {
+  .avantages .div:nth-child(3) img, 
+  .avantages .div:nth-child(4) img {
     width: 55px;
   }
-  .avantages {
+}
+@media screen and (max-width: 1170px) {
+  .avantages .content {
     width: 90%;
   }
 }
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 900px) {
   .avantages {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+  }
+  .avantages .content {
     width: 80%;
     flex-wrap: wrap;
+    position: initial;
+    transform: initial;
   }
-  .avantages div {
-    width: 47%;
+  .avantages .div {
+    width: 48%;
     margin-bottom: 30px;
-  }
-  .avantages {
-    bottom: -330px;
   }
 }
 @media screen and (max-width: 800px) {
-  .avantages div {
-    width: 47%;
-    margin-bottom: 30px;
+  .avantages .content {
+    width: 60%;
   }
-  .avantages {
-    bottom: -380px;
+  .avantages .div {
+    width: 100%;
   }
 }
-@media screen and (max-width: 600px) {
-  .avantages div {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  .avantages {
-    bottom: -700px;
+@media screen and (max-width: 500px) {
+  .avantages .content {
+    width: 80%;
   }
 }
 
@@ -380,13 +406,13 @@ ul, li {
   padding: 100px;
   padding-top: 50px;
   justify-content: space-around;
-  align-items: center;
 }
 .coach .img {
   width: 45%;
 }
 .coach .img img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .coach .txt {
@@ -419,13 +445,70 @@ ul, li {
   display: inline-block;
   border-radius: 10px;
 }
+@media screen and (max-width: 1400px) {
+  .coach {
+    padding: 50px;
+  }
+  .coach .txt {
+    margin-left: 50px;
+  }
+  .coach p {
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .coach figcaption {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .coach {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 250px;
+  }
+  .coach .img {
+    width: 80%;
+    margin-bottom: 50px;
+  }
+  .coach .txt {
+    width: 80%;
+    margin-left: 0;
+  }
+  .coach figcaption {
+    margin: 0;
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .coach {
+    margin-top: 50px;
+  }
+  .coach .img {
+    width: 90%;
+  }
+  .coach .txt {
+    width: 90%;
+    margin-left: 0;
+  }
+  
+}
+@media screen and (max-width: 600px) {
+  .coach .img {
+    width: 95%;
+  }
+  .coach .txt {
+    width: 95%;
+  }
+  .coach figcaption {
+    font-size: 16px;
+  }
+}
 
 
 
 
 .services {
   background: url(./assets/services.jpg);
-  height: 100vh;
   background-size: cover;
 }
 .services .container {
@@ -484,6 +567,42 @@ ul, li {
   width: 70px;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 1400px) {
+  .services .content div p {
+    line-height: 25px;
+  }
+  .services .content div h3 {
+    font-size: 18px;
+  }
+  .services .content div {
+    padding: 40px 10px;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .services .content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .services .content div {
+    width: 43%;
+    padding: 40px 20px;
+    margin: 30px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .services .container {
+    padding: 100px 50px;
+  }
+  .services .content div {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .services .content div {
+    width: 90%;
+    margin: 30px 0;
+  }
+}
 
 
 
@@ -517,6 +636,9 @@ ul, li {
   height: 400px;
   box-shadow: 5px 5px 15px 5px #e2e2e2;
   border-radius: 20px;
+
+}
+.shop-section article a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -563,6 +685,45 @@ ul, li {
 .shop-page-content button:hover {
   background-color: #000000e0;
   transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 1400px) {
+  .shop-section article,
+  .shop-page-content article {
+    width: 23%;
+    height: 300px;
+  }
+  .shop-section article img,
+  .shop-page-content article img  {
+    width: 70%;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .shop-section .content,
+  .shop-page-content {
+    justify-content: center;
+  }
+  .shop-section article,
+  .shop-page-content article {
+    width: 40%;
+    height: 300px;
+    margin: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .shop-section article,
+  .shop-page-content article {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .shop-section {
+    padding: 50px 20px;
+  }
+  .shop-section article,
+  .shop-page-content article {
+    width: 100%;
+  }
 }
 
 
@@ -661,7 +822,39 @@ ul, li {
 .pricing .button:hover {
   background: black;
 }
-
+@media screen and (max-width: 1400px) {
+  .pricing .content article ul li {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .pricing .container {
+    padding: 50px 20px;
+  }
+  .pricing .content article {
+    margin: 20px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .pricing .container {
+    padding: 50px 20px;
+  }
+  .pricing .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .pricing .content article {
+    margin: 20px;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .pricing .content article {
+    margin: 20px;
+    width: 100%;
+  }
+}
 
 
 
@@ -693,3 +886,150 @@ ul, li {
 .shop-page-content article {
   margin-bottom: 50px;
 }
+
+
+
+
+
+footer {
+  background-color: #1f1f1f;
+}
+footer .content {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+footer .logo {
+  width: 22%;
+  margin-bottom: 20px;
+}
+footer .logo img {
+  width: 150px;
+}
+footer .logo p {
+  color: white;
+  font-size: 14px
+}
+footer .horaires {
+  width: 22%;
+  color: white;
+  font-size: 14px; 
+  margin-bottom: 20px;
+}
+footer h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #EA1C29;
+  text-transform: uppercase;
+}
+footer .contact {
+  width: 22%;
+  margin-bottom: 20px;
+}
+footer .contact div {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+footer .contact img {
+  margin-right: 10px;
+  width: 30px;
+}
+footer .newsletter {
+  width: 22%;
+}
+footer .newsletter div {
+  display: flex;
+  flex-direction: column;
+}
+footer .newsletter input {
+  padding: 15px 20px;
+}
+footer .newsletter button {
+  background: #EA1C29;
+  color: white;
+  border: none;
+  padding: 15px;
+  text-transform: uppercase;
+}
+footer .copyright {
+  background: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+@media screen and (max-width: 1024px) {
+  footer .content {
+    flex-direction: column;
+  }
+}
+
+
+@media screen and (max-width: 1400px) {
+  .apropos .content {
+    margin: 100px 20px !important;
+  }
+  .apropos .icons img  {
+    width: 30px;
+  }
+  .apropos .box-icons {
+    padding: 5px !important;
+  }
+  .apropos .box-icons p {
+    font-size: 18px  !important;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .apropos .content {
+    margin: 100px 20px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .apropos .box {
+    width: 40% !important;
+  }
+  
+}
+@media screen and (max-width: 800px) {
+  .apropos .box {
+    width: 50% !important;
+  }
+  
+}
+@media screen and (max-width: 600px) {
+  .apropos .box {
+    width: 80% !important;
+  }
+  
+}
+
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .contact-page {
+    margin: 100px 20px !important;
+  }
+  .contact-page .txt {
+    flex-direction: column-reverse !important;
+  }
+  .form {
+    width: 90% !important;
+  }
+  .contact-page .img {
+    display: none;
+  }
+
+}
+@media screen and (max-width: 700px) {
+  .shop-header h1 {
+    font-size: 70px !important;
+  }
+}
+

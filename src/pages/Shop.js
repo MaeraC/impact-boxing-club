@@ -11,6 +11,7 @@ import chaussure from "../assets/chaussure.png"
 import protegetibia from "../assets/protegetibia.png"
 import genouillere from "../assets/genouillere.png"
 import coudiere from "../assets/coudiere.png"
+import Footer from "../components/Footer"
 
 function Shop() {
     return (
@@ -121,6 +122,8 @@ function Shop() {
                         <button>Acheter</button>
                     </article>
             </div>
+
+        <Footer />
         </>
     )
 }

@@ -15,11 +15,11 @@ function Header() {
             <nav className={isMenuOpen ? "open" : ""}>
                 <div>
                     <Link to="/">Accueil</Link>
-                    <Link to="/">Nos clubs</Link>
-                    <Link to="/">Blog</Link>
                     <Link to="/boutique">Boutique</Link>
-                    <Link to="/">À propos</Link>
-                    <Link to="/">Contact</Link>
+                    <Link to="/a-propos">À propos</Link>
+                    <Link to="/contact">Contact</Link>
+                    <Link>Nos clubs</Link>
+                    <Link>Blog</Link>
                 </div>
                 <div>
                     <button className="shop"><img src={shop} alt="" /></button>

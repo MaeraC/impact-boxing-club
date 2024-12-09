@@ -3,9 +3,6 @@ import fb from "../assets/fb.png"
 import ig from "../assets/ig.png"
 import tk from "../assets/tk.png"
 import yt from "../assets/yt.png"
-import Avantages from "./Avantages"
-
-
 
 function Hero() {
     return (
@@ -24,7 +21,6 @@ function Hero() {
                 </aside>
             </div>
 
-            <Avantages />
         </section>
     )
 }
