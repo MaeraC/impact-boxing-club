@@ -733,6 +733,9 @@ ul, li {
   .shop-page-content article {
     width: 100%;
   }
+  .shop-page-content {
+    padding: 100px 20px !important;
+  }
 }
 
 
