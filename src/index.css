@@ -275,7 +275,7 @@ ul, li {
     padding-top: 150px;
   }
   .hero .content h1 {
-    font-size: 50px;
+    font-size: 60px;
     margin-bottom: 40px;
   }
   .hero .content h2 {
@@ -493,8 +493,11 @@ ul, li {
   
 }
 @media screen and (max-width: 600px) {
+  .coach {
+    padding: 50px 20px;
+  }
   .coach .img {
-    width: 95%;
+    width: 100%;
   }
   .coach .txt {
     width: 95%;
@@ -601,6 +604,12 @@ ul, li {
   .services .content div {
     width: 90%;
     margin: 30px 0;
+  }
+  .services .container {
+    padding: 100px 20px;
+  }
+  .services .container h2 {
+    margin-bottom: 50px;
   }
 }
 
@@ -965,6 +974,17 @@ footer .copyright {
 @media screen and (max-width: 1024px) {
   footer .content {
     flex-direction: column;
+    padding: 50px 20px;
+  }
+  footer .logo, footer .horaires, footer .contact, footer .newsletter {
+    width: 100%;
+  }
+  footer .copyright {
+    flex-direction: column;
+  }
+  footer .copyright p {
+    margin-bottom: 20px;
+    text-align: center;
   }
 }
 

@@ -34,7 +34,7 @@ function Header() {
                 
             </nav>
             
-            {isMenuOpen && (
+            {!isMenuOpen && (
                 <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     &#9776;
                 </button>
